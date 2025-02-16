@@ -10,7 +10,6 @@ const {
 const { protect, admin } = require('../middlewares/authMiddleware');
 const { check } = require('express-validator');
 
-// Protect all routes below this middleware
 router.use(protect);
 
 router.post(
@@ -35,7 +34,6 @@ router.put(
   updateUser
 );
 
-// Only admin can delete users
 router.delete('/:id', admin, deleteUser);
 
 module.exports = router;

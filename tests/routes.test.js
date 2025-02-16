@@ -23,8 +23,7 @@ describe('Auth and User Routes', () => {
     const adminUser = await User.findOne({ email: 'admin@example.com' });
     adminUser.role = 'admin';
     await adminUser.save();
-    // const updatedAdmin = await User.findById(adminUser._id);
-// console.log('Admin role:', updatedAdmin.role); 
+
   });
 
   afterAll(async () => {
