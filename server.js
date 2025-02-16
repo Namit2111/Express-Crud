@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const errorHandler = require('./middlewares/errorHandler');
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const app = express();
 
 app.use(express.json());
 
+app.use(errorHandler);
 
 app.get('/', (req, res) => res.send('API is running...'));
 
